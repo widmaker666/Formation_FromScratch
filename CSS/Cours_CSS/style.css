@@ -1,0 +1,186 @@
+/*importer via un lien internet*/
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); */
+
+@font-face {
+  font-family: "Incosolata";
+  src: url("./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf");
+}
+/* * veut dire qu'on mets le style à tous les éléments */
+/* *{
+    padding: 0;
+    margin: 0;
+} */
+body {
+  font-family: "Incosolata", Verdana, Tahoma, sans-serif;
+  background: url(./assets/img/imgC.png) center/cover;
+  min-height: 100vh;
+  /* pour voir le body */
+  border: 2px solid black;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 2.5rem; /* rem car étudié pour les mals voyant 1REM = 16px */
+  text-shadow: 3px 3px 5px #00ff22;
+  color: rgb(0, 25, 252);
+  text-decoration: underline;
+  font-family: "Inconsolata", monospace;
+}
+
+p {
+  text-align: center;
+  color: orange;
+}
+
+main {
+  min-height: 500px;
+  /* toujours choisir en pourcentage sur le width car ça permet d'être responsive */
+  width: 90%;
+  border: 2px solid rgb(119, 0, 255);
+  background: white;
+  /* Centrer une boite premiere valeur haut/bas deuxieme valeur droite/gauche (top = haut / bottom = bas */
+  margin: 0 auto;
+  /* Margin top permet de descendre la box mais depuis le haut */
+  margin-top: 50px;
+  box-shadow: 5px 2px 13px 1px #ff5900;
+  /* Padding ce sont les marges intérieurs pour décoller les éléments à l'intérieur de la box, si on mets une valeur les valeurs top/right/bottom/left sont = à 15px */
+  padding: 15px;
+}
+
+h2 {
+  margin: 0;
+}
+/* On peut grâce à la virgule rajouter autant de classe id etc qui veut avoir les même paramètre */
+.flexbox,
+.grid,
+.absolute {
+  border: 2px solid skyblue;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  min-height: 150px;
+}
+
+/* FlexBox sert à répartir equitablement les box ou element sur la page */
+/* on appel la classe flexbox et l'enfant de cette box qui est li */
+.flexbox ul {
+  padding: 0;
+  display: flex; /*aligne les li*/
+  justify-content: space-around;
+}
+
+.flexbox li {
+  list-style: none; /* Sert à enlever les point des li */
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  background: lightcoral;
+  /* centrer un unique element verticalement et horizontalement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GRID */
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.grid img {
+  width: 80%;
+  margin: 20px auto;
+  display: block;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  /* On vas appliquer des noms pour ensuite placer les éléments dans la grid-area */
+  grid-template-areas:
+    "i1 i2"
+    "ta ta"
+    "vi bt";
+}
+input,
+textarea {
+  margin: 5px;
+  border: 2px solid black;
+  padding: 10px;
+  font-style: 1.1em;
+  font-family: "Inconsolata";
+}
+
+textarea {
+  grid-area: ta;
+  height: 40px;
+  resize: none;
+  font-family: "Inconsolata";
+}
+
+#btn-submit {
+  grid-area: bt;
+  cursor: pointer;
+  background: lightslategray;
+  transition: 0.3s;
+}
+/* Effet sur le bouton valider */
+#btn-submit:hover {
+  background: lightpink;
+}
+/* ABSOLUTE position */
+.absolute {
+  position: relative; /* La position relative au parent doit etre appliquer pour obliger les éléments à interagir à l'intérieur des parents */
+}
+#circle1 {
+  height: 80px;
+  width: 80px;
+  background: skyblue;
+  position: absolute;
+  border-radius: 150px;
+  top: -20px;
+  right: -20px;
+}
+
+#circle2 {
+  height: 40px;
+  width: 40px;
+  border-radius: 150px;
+  background: skyblue;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+}
+
+/* Faire du RESPONSIVE */
+@media screen and (max-width: 900px) {
+  .grid-container {
+    display: block;
+  }
+  .grid-container img {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .flexbox ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "i1"
+      "i2"
+      "ta"
+      "bt";
+  }
+  input,
+  textarea {
+    font-size: 0.8rem;
+  }
+}
