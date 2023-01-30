@@ -70,18 +70,17 @@ li:hover {
   left: 0;
 }
 /* Voici la croix de fermeture du menu !! en utilisant les enfants span */
-.active span{
-  position: absolute;  
+.active span {
+  position: absolute;
 }
-.active span:nth-child(1){
+.active span:nth-child(1) {
   transform: rotate(45deg);
-
 }
-.active span:nth-child(2){
+.active span:nth-child(2) {
   opacity: 0;
 }
-.active span:nth-child(3){
-transform: rotate(-45deg);
+.active span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 /* Pour touche la balise section qui et un enfant de body et le frere de div side-bar on utilise le ~ */
@@ -91,4 +90,3 @@ transform: rotate(-45deg);
   /* J'ai ajouté une main avec cursor pointer, pour montrer que l'élément est cliquabble pour fermer le menu burger */
   cursor: pointer;
 }
-

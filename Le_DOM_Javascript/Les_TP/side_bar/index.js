@@ -8,7 +8,6 @@
 // Aide
 // Priorités en CSS : !important >id > classe > baliseHtml
 
-
 /* Correction TP */
 const sideBar = document.getElementById("side-bar");
 
@@ -22,5 +21,3 @@ const content = document.querySelector(".content");
 content.addEventListener("click", () => {
   sideBar.classList.remove("active");
 });
-
-
