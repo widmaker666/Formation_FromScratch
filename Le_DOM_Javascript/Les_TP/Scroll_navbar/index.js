@@ -7,37 +7,18 @@
 // Connaitre niveau de scroll (window.scrollY)
 
 
+let lastScroll = 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.addEventListener('scroll', () => {
+  console.log(window.scrollY);
+  if(window.scrollY < lastScroll) {
+    navbar.style.top = 0;
+  }else{
+    navbar.style.top = "-60px";
+  }
+  /* A chaque fin de condition if rempli ou non on met à l'intérieur de lastScroll la valeur de cette condition */
+  lastScroll = window.scrollY;
+});
 
 //code correction !
 //
