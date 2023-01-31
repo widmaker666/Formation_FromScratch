@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <!-- création du formulaire -->
+    <form action="">
+        <div class="pseudo-container">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" autocomplete="off" id="pseudo">
+            <span>ici injecter message erreur</span>
+        </div>
+
+        <div class="email-container">
+            <label for="email">Email</label>
+            <input type="text" autocomplete="off" id="email">
+            <span>Email incorrect</span>
+        </div>
+
+        <div class="password-container">
+            <label for="password">Mot De Passe</label>
+            <input type="password" autocomplete="off" id="password">
+            <p id="progress-bar"></p>
+            <span>ici injecter message erreur</span>
+        </div>
+
+        <div class="confirm-container">
+            <label for="confirm">Confirmer Mot De Passe</label>
+            <input type="password" autocomplete="off" id="confirm">
+            <span>ici injecter message erreur</span>
+        </div>
+
+        <input type="submit" value="Confirmer">
+
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>
