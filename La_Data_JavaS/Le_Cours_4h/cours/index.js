@@ -44,7 +44,7 @@ let data = [
 // console.log(data[2].pseudo[0]);
 
 //---------------------------
-// Les structures de controle
+// *Les structures de controle
 //---------------------------
 if (data[0].age > data[1].age) {
   // console.log(data[0].pseudo + " est plus agé que " + data[1].pseudo);
@@ -98,7 +98,7 @@ document.body.addEventListener("click", (e) => {
 });
 
 //----------------
-// Méthodes String
+// *Méthodes String
 //----------------
 let string2 = "Javascript est un langage orienté objet";
 
@@ -124,7 +124,7 @@ let string2 = "Javascript est un langage orienté objet";
 // console.log(string2.replace("Javascript", "PHP"));
 
 //-----------------
-// Méthodes Numbers
+// *Méthodes Numbers
 //-----------------
 
 let number2 = 42.1234;
@@ -146,7 +146,7 @@ let numberString = "42.12 est un chiffre";
 // console.log(Math.floor(Math.random() * 50));
 
 //-----------------
-// Méthodes Arrays
+// *Méthodes Arrays
 //-----------------
 
 let array3 = ["Javascript", "Php", "Python"];
@@ -195,7 +195,7 @@ arrayNumber.push(17);
   .join("");
  */
 //-----------------
-// Méthodes Objects
+// *Méthodes Objects
 //-----------------
 /*   document.body.innerHTML = data
   .filter((user) => user.pseudo.includes("a"))
@@ -213,7 +213,7 @@ arrayNumber.push(17);
  */
 
 //----------
-// Les dates
+// *Les dates
 //----------
 
 // Date classique
@@ -221,7 +221,7 @@ let date = new Date();
 
 // Timestamp
 let timestamp = Date.parse(date);
-// console.log(timestamp);
+//console.log(timestamp);
 
 // IsoString
 let iso = date.toISOString();
@@ -231,28 +231,29 @@ function dateParser(chaine) {
     year: "numeric",
     month: "long",
     day: "numeric",
-    // hour: "numeric",
-    // minute: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
   });
   return newDate;
 }
 
 // console.log(dateParser(date));
 // console.log(dateParser(timestamp));
-// console.log(dateParser(iso));
+//console.log(dateParser(iso));
 
 //--------------
-// Destructuring
+// *Destructuring
 //--------------
 
 let moreData = {
   destVar: ["Element 1", "Element 2"],
 };
-
+/* On destructure le code avec {} pour dire exactement const destVar = moreData.destVar */
 const { destVar } = moreData;
 
-// console.log(moreData.destVar);
-// console.log(destVar);
+console.log(moreData.destVar);
+console.log(destVar);
 
 let array5 = [70, 80, 90];
 let [x, y, z] = array5;
@@ -261,32 +262,36 @@ let [x, y, z] = array5;
 // console.log(z);
 
 const dateDestructuring = (chaine) => {
-  let newDate = chaine.split("T")[0];
+  let newDate = chaine.split("T")[0]; //le split coupe en deux mais laisse dans un tableau le premier element et l'element coupé avec [0]
   let [y, m, d] = newDate.split("-");
   return [d, m, y].join("/");
 };
-// console.log(dateDestructuring(iso));
+console.log(dateDestructuring(iso));
 
 //-------------
 // Les Datasets
 //-------------
 
 const h3js = document.getElementById("javascript");
-// console.log(h3js.dataset.lang);
+//console.log(h3js.dataset); //Le dataset grâce à la balise HTML data-lang, cette méthode nous sort un objet Javascript qu'on ensuite utiliser avec des .lang etc ....
+//console.log(h3js.dataset.lang);
+//console.log(h3js.id); //permet de ressortir l'id de la balise
 
 const h3 = document.querySelectorAll("h3");
-// h3.forEach((language) => console.log(language.dataset.lang));
+h3.forEach((language) => console.log(language.dataset.lang));
 
 //----------
 // Les Regex
 //----------
-let mail = "from_s$cratch33@gmail.com";
-// console.log(mail.search(/frscceeceom/));
+let mail = "from_scratch33@gmail.com";
+//on cherche une expression
+console.log(mail.search(/frscceeceom/));
 
 // console.log(mail.replace(/from/, "de"));
+/* on compare avec .match */
 // console.log(mail.match(/SCratch/i));
-// console.log(mail.match(/[zug]/));
-// console.log(mail.match(/[12]/));
+// console.log(mail.match(/[\w]/)); // \w veut dire tous les caractères
+// console.log(mail.match(/[12]/)); // ou .match(/[\d]/));
 
 // Tous les chiffres
 // console.log(mail.match(/\d/));
@@ -297,4 +302,4 @@ let mail = "from_s$cratch33@gmail.com";
 // console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i));
 
 let separator = 265264849;
-// console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
