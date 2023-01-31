@@ -27,3 +27,17 @@ setInterval(() => {
   color.textContent = "rgb(" + red + ", " + green + ", " + blue + ")";
   body.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
 }, 2000);
+
+
+//*Correction avec une fonction du setInterval
+/* function randomColor() {
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+
+  color.textContent = "rgb(" + red + ", " + green + ", " + blue + ")";
+  body.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
+}
+
+setInterval(randomColor, 2000); */
+
