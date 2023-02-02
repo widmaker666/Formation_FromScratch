@@ -1,0 +1,79 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontFamily": "'JetBrains Mono',Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.autoSave": "afterDelay",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "workbench.startupEditor": "none",
+    "liveServer.settings.donotVerifyTags": true,
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.linkedEditing": true,
+    "editor.occurrencesHighlight": false,
+    "editor.suggest.insertMode": "replace",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "files.defaultLanguage": "markdown",
+    "explorer.autoReveal": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.tree.indent": 15,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.editor.enablePreview":false,
+    "emmet.triggerExpansionOnTab": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "editor.lineHeight": 25,
+    "editor.fontSize": 16,
+    "workbench.iconTheme": "material-icon-theme",
+    "tabnine.experimentalAutoImports": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    }, 
+    "better-comments.tags": [
+      {
+        "tag": "!",
+        "color": "#85C1E9",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": true
+      },
+      
+      {
+        "tag": "//",
+        "color": "#B4B4B4",
+        "strikethrough": true,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": true
+      },
+      {
+        "tag": "todo",
+        "color": "#FF8C00",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": true
+      },
+      {
+        "tag": "*",
+        "color": "#FF5CC7",
+        "strikethrough": false,
+        "underline": false,
+        "backgroundColor": "transparent",
+        "bold": false,
+        "italic": true
+      }
+    ]   
+}
