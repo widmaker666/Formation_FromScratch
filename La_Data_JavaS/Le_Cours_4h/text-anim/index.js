@@ -1,6 +1,6 @@
 /*  */
 const target = document.getElementById("target");
-let array = ["photographer", "pederaste", "diwalla", "mouchatte"];
+let array = ["au\ Chiotte", "au\ toilette", "au\ cabinet", "pas\ encore revenu"];
 let wordIndex = 0;
 let letterIndex = 0;
 
