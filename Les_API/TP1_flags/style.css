@@ -1,0 +1,28 @@
+.filter-container {
+  text-align: center;
+  padding-bottom: 20px;
+}
+input {
+  margin: 20px auto;
+  display: block;
+  font-size: 1.4rem;
+  text-align: center;
+  transition: 0.2s;
+}
+input:focus {
+  border-radius: 30px;
+  background: rgb(238, 238, 238);
+}
+.range-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type="range"] {
+  width: 250px;
+  margin: 0 10px 10px 0;
+}
+.range-container span {
+  font-size: 1.2rem;
+  transform: translateY(-3px);
+}
