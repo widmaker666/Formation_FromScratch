@@ -1,4 +1,3 @@
-//-Les Variables globales-//
 const main = document.querySelector("main");
 const basicArray = [
   { pic: 0, min: 1 },
@@ -14,14 +13,14 @@ const basicArray = [
 ];
 let exerciceArray = [];
 
-//!Remplir le tableau avec local storage-//
-() => {
-  if (localStorage.exercice) {
-    exerciceArray = localStorage.exercice;
+// Get stored exercices array
+(() => {
+  if (localStorage.exercices) {
+    exerciceArray = JSON.parse(localStorage.exercices);
   } else {
     exerciceArray = basicArray;
   }
-};
+})();
 
 class Exercice {
   constructor() {
@@ -29,13 +28,43 @@ class Exercice {
     this.minutes = exerciceArray[this.index].min;
     this.seconds = 0;
   }
-  updateCountdwon() {
+
+  updateCountdown() {
+    this.seconds = this.seconds < 10 ? "0" + this.seconds : this.seconds;
+
+    setTimeout(() => {
+      if (this.minutes === 0 && this.seconds === "00") {
+        this.index++;
+        this.ring();
+        if (this.index < exerciceArray.length) {
+          this.minutes = exerciceArray[this.index].min;
+          this.seconds = 0;
+          this.updateCountdown();
+        } else {
+          return page.finish();
+        }
+      } else if (this.seconds === "00") {
+        this.minutes--;
+        this.seconds = 59;
+        this.updateCountdown();
+      } else {
+        this.seconds--;
+        this.updateCountdown();
+      }
+    }, 100);
+
     return (main.innerHTML = `
-    <div class="exercice-container">
-      <p>${this.minutes} :${this.seconds}</p>
-        <img src="./img/${exerciceArray[this.index].pic}.png" alt="exercice">
-    <div>${this.index + 1}/${exerciceArray.length}</div>
-    </div>`);
+      <div class="exercice-container">
+        <p>${this.minutes}:${this.seconds}</p>
+        <img src="./img/${exerciceArray[this.index].pic}.png" />
+        <div>${this.index + 1}/${exerciceArray.length}</div>
+      </div>`);
+  }
+
+  ring() {
+    const audio = new Audio();
+    audio.src = "ring.mp3";
+    audio.play();
   }
 }
 
@@ -50,14 +79,15 @@ const utils = {
     document.querySelectorAll('input[type="number"]').forEach((input) => {
       input.addEventListener("input", (e) => {
         exerciceArray.map((exo) => {
-          if (exo.pic == parseInt(e.target.id)) {
-            exo.min = e.target.value;
+          if (exo.pic == e.target.id) {
+            exo.min = parseInt(e.target.value);
             this.store();
           }
         });
       });
     });
   },
+
   handleEventArrow: function () {
     document.querySelectorAll(".arrow").forEach((arrow) => {
       arrow.addEventListener("click", (e) => {
@@ -77,6 +107,7 @@ const utils = {
       });
     });
   },
+
   deleteItem: function () {
     document.querySelectorAll(".deleteBtn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -98,9 +129,9 @@ const utils = {
     page.lobby();
     this.store();
   },
-  //*Fonction qui va stocker les modification du tableau dans la variable exercice
+
   store: function () {
-    localStorage.exercice = JSON.stringify(exerciceArray);
+    localStorage.exercices = JSON.stringify(exerciceArray);
   },
 };
 
@@ -110,43 +141,45 @@ const page = {
       .map(
         (exo) =>
           `
-<li>
-    <div class="card-header">
-        <input type="number" id="${exo.pic}" min="1" max="10" value=${exo.min}>
-        <span>min</span>
-    </div>    
-    <img src="./img/${exo.pic}.png">
-    <i class="fas fa-arrow-alt-circle-left arrow" data-pic=${exo.pic}></i>
-    <i class="fas fa-times-circle deleteBtn" data-pic=${exo.pic}></i>
-</li>    
-    `
+        <li>
+          <div class="card-header">
+            <input type="number" id=${exo.pic} min="1" max="10" value=${exo.min}>
+            <span>min</span>
+          </div>
+          <img src="./img/${exo.pic}.png" />
+          <i class="fas fa-arrow-alt-circle-left arrow" data-pic=${exo.pic}></i>
+          <i class="fas fa-times-circle deleteBtn" data-pic=${exo.pic}></i>
+        </li>
+      `
       )
       .join("");
 
     utils.pageContent(
       "Paramétrage <i id='reboot' class='fas fa-undo'></i>",
       "<ul>" + mapArray + "</ul>",
-
       "<button id='start'>Commencer<i class='far fa-play-circle'></i></button>"
     );
     utils.handleEventMinutes();
     utils.handleEventArrow();
     utils.deleteItem();
     reboot.addEventListener("click", () => utils.reboot());
-    start.addEventListener("click", () => {
-      this.routine();
-    });
+    start.addEventListener("click", () => this.routine());
   },
+
   routine: function () {
     const exercice = new Exercice();
-    utils.pageContent("Routine", exercice.updateCountdwon(), null);
+
+    utils.pageContent("Routine", exercice.updateCountdown(), null);
   },
+
   finish: function () {
     utils.pageContent(
-      "C'est terminé",
-      "<button id='start'>Recommencer<i class='far fa-play-circle'></i></button>",
-      "<button id='reboot' class='btn-reboot'>Réinintialiser <i class= 'fas fa-times-circle'></i></button>"
+      "C'est terminé !",
+      "<button id='start'>Recommencer</button>",
+      "<button id='reboot' class='btn-reboot'>Réinintialiser <i class='fas fa-times-circle'></i></button>"
     );
+    start.addEventListener("click", () => this.routine());
+    reboot.addEventListener("click", () => utils.reboot());
   },
 };
 
