@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1675955095127" clover="3.2.0">
+  <project timestamp="1675955095127" name="All files">
+    <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="6" coveredelements="6" complexity="0" loc="4" ncloc="4" packages="1" files="2" classes="2"/>
+    <file name="addi.js" path="C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\addi.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+    </file>
+    <file name="array.js" path="C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\array.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

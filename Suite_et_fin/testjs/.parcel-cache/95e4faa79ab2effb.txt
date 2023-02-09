@@ -1,0 +1,13 @@
+12
+111C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\dist\index.c36f364e.js133204147567296802 0
+96C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\addi.js133204143406819592 0
+93C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\dist133204149033177824 1
+99C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\index.html133204149025487833 0
+115C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\dist\index.3d214d75.js.map133204149032207825 0
+97C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\index.js133204148772857809 0
+111C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\dist\index.3d214d75.js133204149032057816 0
+101C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\package.json133204147313866558 0
+115C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\dist\index.c36f364e.js.map133204147567376799 0
+104C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\dist\index.html133204149033147824 0
+112C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\dist\testjs.3464ddca.js133204147568126822 0
+116C:\Users\The Flying Sharks\Desktop\Formation_From_Scratch_Javascript\Suite_et_fin\testjs\dist\testjs.3464ddca.js.map133204147568356822 0
